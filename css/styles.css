@@ -18,10 +18,30 @@ body {
     background-color: var(--white-color); 
 }
 
-h1, h2, h3, h4, h5, h6, p{
+h1, h2, h3, h4, h5, h6, p {
    margin: 0;
    padding: 0;
 }
+
+a {
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+.visually-hidden {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+   
+   white-space: nowrap;
+   clip-path: inset(100%);
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+ }
 
 .section {
    padding: 94px 0;
@@ -44,21 +64,6 @@ h1, h2, h3, h4, h5, h6, p{
    padding: 0;
    display: flex;
    flex-wrap: wrap;    
-}
-
-.images {
-   display: block;
-   max-width: 100%;
-   height: auto;
-}
-
-.social-link {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 44px;
-   height: 44px;    
-   border-radius: 50%;   
 }
 
 .icon-social {
@@ -294,22 +299,15 @@ h1, h2, h3, h4, h5, h6, p{
     border-radius: 4px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
  }
- 
+
 
 /* ADVANTAGES SECTION BEM */
 
-.advantages__headline,
-.portfolio__headline  {
-   display: none;
-}
-
-.advantages__list-items,
-.directions__list-items,
-.team__list-items {   
+.advantages__list {   
    justify-content: space-between;
 } 
 
-.advantages__list-item {
+.advantages__item {
    width: 270px;    
 }
 
@@ -329,7 +327,7 @@ h1, h2, h3, h4, h5, h6, p{
    height: 70px;    
 }  
 
-.advantages__features {
+.advantages__title {
    font-weight: 700;
    font-size: 14px;
    line-height: 1.14;
@@ -350,6 +348,15 @@ h1, h2, h3, h4, h5, h6, p{
 .directions {
    padding-top: 0;
 }
+
+.directions__list {   
+   justify-content: space-between;
+} 
+
+.directions__item {
+   position: relative;
+   overflow: hidden;
+ }
 
 .directions__headline,
  .team__headline,
@@ -378,7 +385,6 @@ h1, h2, h3, h4, h5, h6, p{
    letter-spacing: 0.03em;
    text-transform: uppercase;
    color: var(--white-color);
-   margin: 0;
  }
 
 
@@ -388,7 +394,11 @@ h1, h2, h3, h4, h5, h6, p{
      background-color: var(--bg-color-grey);
  }
 
- .team__member-card {
+ .team__cards {   
+   justify-content: space-between;
+} 
+
+ .team__card {
    background-color: var(--white-color);     
    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
    0px 1px 1px rgba(0, 0, 0, 0.14), 
@@ -418,7 +428,7 @@ h1, h2, h3, h4, h5, h6, p{
      margin: 0 0 16px;
  }
 
- .team__social-wrapper {    
+ .socials {    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -426,16 +436,31 @@ h1, h2, h3, h4, h5, h6, p{
     background-color: var(--white-color);
  }
 
- .team__social-link {    
-    color: #AFB1B8;  
-    transition: background-color var(--transition-speed), color var(--transition-speed);  
+ .socials__link {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 44px;
+   height: 44px;    
+   border-radius: 50%;    
+   color: #AFB1B8;  
+   transition: background-color var(--transition-speed), color var(--transition-speed);  
  }
 
- .team__social-link:hover, .team__social-link:focus{
+ .socials__link:hover, .socials__link:focus{
    background-color: #2196F3;
-   color: #FFF;
-   
+   color: #FFF;   
  }
+
+ .socials__link--grey {
+   color: #FFF;
+   background-color: rgba(255, 255, 255, 0.1);
+   transition: background-color var(--transition-speed);   
+  }
+
+  .social__links--grey:hover {
+     background-color: #2196F3;     
+  }
 
  .logos {
     display: flex;
@@ -525,17 +550,8 @@ h1, h2, h3, h4, h5, h6, p{
       display: flex;
       gap: 10px;      
       flex-wrap: nowrap;
-  }
-
-  .footer-social-wrapper .social-link {
-   color: #FFF;
-   background-color: rgba(255, 255, 255, 0.1);   
-  }
-
-  .footer-social-wrapper .social-link:hover {
-     background-color: #2196F3;
-     transition: background-color var(--transition-speed);
-  }
+      background-color: var(--bg-color-black);
+  }  
 
   .headline-social {
       font-weight: 700;
