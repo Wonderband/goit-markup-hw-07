@@ -9,7 +9,7 @@
  .advantages__icon-wrapper {
     width: 270px;
     height: 120px;
-    background-color: var(--color-bg-grey);
+    background-color: getColor('bg-grey');
     border-radius: 4px;
     margin-bottom: 30px;
     display: flex;
@@ -28,7 +28,7 @@
     line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: var(--color-headline);
+    color: getColor('headline');
     margin-bottom: 10px;
  }
  

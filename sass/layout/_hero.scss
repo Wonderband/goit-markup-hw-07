@@ -5,7 +5,7 @@
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--bg-hero);
+    background-color: getColor('bg-footer');
     background-size: cover;
     padding: 200px 0;
  }

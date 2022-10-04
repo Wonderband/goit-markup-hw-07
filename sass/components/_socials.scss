@@ -23,7 +23,7 @@
  }
 
  .socials__link--grey {
-   color: getColor(white);
+   color: getColor('white');
    background-color: rgba(255, 255, 255, 0.1);
    transition: background-color var(--transition-speed);   
   }
